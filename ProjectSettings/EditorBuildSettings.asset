@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/hollowknight/Menu.unity
+    guid: 99f6f137d5cdb1548bcca469cab5345b
+  - enabled: 0
+    path: Assets/Scenes/hollowknight/Spawn.unity
+    guid: 744171b6f1012fd4e86b8c4c827fd05c
+  - enabled: 0
+    path: Assets/Scenes/hollowknight/Level1.unity
+    guid: 3e89a7c1f245b2d40a65350af796dfe0
+  - enabled: 0
+    path: Assets/Scenes/hollowknight/Level2.unity
+    guid: 2facd36b7c6548b4d8e75d616fabd2f4
+  - enabled: 1
+    path: Assets/Scenes/oneScene.unity
+    guid: e3c63862917b55146920ba799e3787ef
+  - enabled: 1
+    path: Assets/Scenes/threeandfiveScene.unity
+    guid: adbfd5962fff97240a1fb5850bca7644
+  - enabled: 1
+    path: Assets/Scenes/fourScene.unity
+    guid: 3ad427c794d7346caabbde9f592e5e8e
+  - enabled: 1
+    path: Assets/Scenes/sevenScene.unity
+    guid: aefb0527ca26e664eb2a699dfe7979c2
+  - enabled: 1
+    path: Assets/Scenes/eightScene.unity
+    guid: 797e13a4067aeb5418817c659433cc68
+  - enabled: 0
+    path: Assets/Scenes/nineScene.unity
+    guid: cc32af6598a584f448d534f651f28520
+  - enabled: 0
+    path: Assets/Scenes/tenScene.unity
+    guid: a29912fb9ebf6224aa57208531067f99
+  - enabled: 1
+    path: Assets/Scenes/elevenScene.unity
+    guid: f4f77332af23b10498036669c9e2d196
+  - enabled: 1
+    path: Assets/Scenes/hollowknight/HUD.unity
+    guid: 2a5c0f849d51cde469185c2eb4cbeb19
+  m_configObjects: {}
