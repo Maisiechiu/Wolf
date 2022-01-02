@@ -15,9 +15,12 @@ public class PatrolController1 : EnemyController
     private int _reachEdge;
     private bool _isChasing;
     private bool _isMovable;
+    private bool _isdie;
 
 
     public Color[] invulnerableColor;
+
+    public GameObject redhatalive;
 
     public GameObject ShockCollider;
     public GameObject Shock1;
@@ -39,6 +42,7 @@ public class PatrolController1 : EnemyController
     public AudioClip _hurtaudio;
     public AudioClip _dieaudio;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +57,7 @@ public class PatrolController1 : EnemyController
 
         _isChasing = false;
         _isMovable = true;
+        _isdie = false;
     }
 
     // Update is called once per frame
@@ -68,22 +73,27 @@ public class PatrolController1 : EnemyController
         _reachEdge = checkGrounded(detectOffset) ? 0 : (_transform.localScale.x > 0 ? 1 : -1);
 
         // update state
-        if (!_currentState.checkValid(this))
+        if (!_isdie)
         {
-            if (_isChasing)
+            if (!_currentState.checkValid(this))
             {
-                _currentState = new Patrol();
-            }
-            else
-            {
-                _currentState = new Chase();
+                if (_isChasing)
+                {
+                    _currentState = new Patrol();
+                }
+                else
+                {
+                    _currentState = new Chase();
+                }
+
+                _isChasing = !_isChasing;
             }
 
-            _isChasing = !_isChasing;
+            if (_isMovable)
+                _currentState.Execute(this);
+
         }
 
-        if (_isMovable)
-            _currentState.Execute(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -119,6 +129,7 @@ public class PatrolController1 : EnemyController
 
         if (health == 0)
         {
+            _isdie = true;
             die();
             return;
         }
@@ -208,6 +219,7 @@ public class PatrolController1 : EnemyController
     {
         _animator.SetTrigger("isDead");
 
+
         _isChasing = false;
         _isMovable = false;
 
@@ -250,7 +262,8 @@ public class PatrolController1 : EnemyController
             }
         }
         Destroy(_hurteffect);
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        redhatalive.SetActive(true);
     }
 
     public void attack()
