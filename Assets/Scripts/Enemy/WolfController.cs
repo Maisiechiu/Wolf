@@ -27,6 +27,10 @@ public class WolfController : MonoBehaviour
 
     public AudioClip _wolfdie;
 
+    public AudioClip _diebefore;
+
+    public AudioClip _dieafter;
+
     public GameObject[] projectile;
 
     public GameObject[] circle_projectile;
@@ -36,6 +40,8 @@ public class WolfController : MonoBehaviour
     public GameObject _dieeffect;
 
     public float destroyDelay;
+
+    public GameObject Alivewolf;
 
 
 
@@ -168,122 +174,130 @@ public class WolfController : MonoBehaviour
     }
     int attack()
     {
-        attack_type = UnityEngine.Random.Range(1, 4);
-        if (attack_type == 1)
+        if (!isdie)
         {
-            attack_pos = Random_number();
-            for (int i = 0; i < 17; i++)
+            attack_type = UnityEngine.Random.Range(1, 4);
+            if (attack_type == 1)
             {
-                Instantiate(_projectile, new Vector3(attack_pos[i] * 2, 13f, 0), Quaternion.identity);
+                attack_pos = Random_number();
+                for (int i = 0; i < 17; i++)
+                {
+                    Instantiate(_projectile, new Vector3(attack_pos[i] * 2, 13f, 0), Quaternion.identity);
+                }
             }
-        }
-        if (attack_type == 2)
-        {
-            Debug.Log("type2");
+            if (attack_type == 2)
+            {
+                Debug.Log("type2");
 
-            for (int i = -3; i < 3; i++)
+                for (int i = -3; i < 3; i++)
+                {
+
+                    projectile[i + 3] = Instantiate(_projectile, transform.position, Quaternion.identity);
+                    projectile[i + 3].GetComponent<wolfattack>().direction = new Vector2(i, -1);
+                }
+            }
+
+            if (attack_type == 3)
             {
 
-                projectile[i + 3] = Instantiate(_projectile, transform.position, Quaternion.identity);
-                projectile[i + 3].GetComponent<wolfattack>().direction = new Vector2(i, -1);
+                StartCoroutine(circleattack());
+
             }
-        }
-
-        if (attack_type == 3)
-        {
-
-            StartCoroutine(circleattack());
 
         }
+
 
         return attack_type;
     }
 
     private IEnumerator circleattack()
     {
+        if (!isdie)
+        {
+            float a = 0.5f;
+            float b = Convert.ToSingle(Math.Pow(3, 0.5)) / 2.0f;
+            Debug.Log(b);
 
-        float a = 0.5f;
-        float b = Convert.ToSingle(Math.Pow(3, 0.5)) / 2.0f;
-        Debug.Log(b);
+            float res = 3.0f;
+            float second = 0.08f;
 
-        float res = 3.0f;
-        float second = 0.08f;
-
-        //0 30 60 90 120 150 180 210 240 270 300 360
-
-
-        //象限1
-        circle_projectile[0] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[0].GetComponent<wolfattack>().direction = new Vector2(1 * res, 0);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            //0 30 60 90 120 150 180 210 240 270 300 360
 
 
-        circle_projectile[1] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[1].GetComponent<wolfattack>().direction = new Vector2(b * res, a * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
-
-        circle_projectile[2] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[2].GetComponent<wolfattack>().direction = new Vector2(a * res, b * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
-
-        //象限2           
-        circle_projectile[3] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[3].GetComponent<wolfattack>().direction = new Vector2(0 * res, 1 * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
-
-        circle_projectile[4] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[4].GetComponent<wolfattack>().direction = new Vector2(-a * res, b * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            //象限1
+            circle_projectile[0] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[0].GetComponent<wolfattack>().direction = new Vector2(1 * res, 0);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
 
-        circle_projectile[9] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[9].GetComponent<wolfattack>().direction = new Vector2(-b * res, a * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[1] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[1].GetComponent<wolfattack>().direction = new Vector2(b * res, a * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
-        //象限3
-        circle_projectile[5] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[5].GetComponent<wolfattack>().direction = new Vector2(-1 * res, 0);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[2] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[2].GetComponent<wolfattack>().direction = new Vector2(a * res, b * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+            //象限2           
+            circle_projectile[3] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[3].GetComponent<wolfattack>().direction = new Vector2(0 * res, 1 * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+            circle_projectile[4] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[4].GetComponent<wolfattack>().direction = new Vector2(-a * res, b * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
 
-        circle_projectile[6] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[6].GetComponent<wolfattack>().direction = new Vector2(-b * res, -a * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[9] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[9].GetComponent<wolfattack>().direction = new Vector2(-b * res, a * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+            //象限3
+            circle_projectile[5] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[5].GetComponent<wolfattack>().direction = new Vector2(-1 * res, 0);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
 
-        circle_projectile[7] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[7].GetComponent<wolfattack>().direction = new Vector2(-a * res, -b * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[6] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[6].GetComponent<wolfattack>().direction = new Vector2(-b * res, -a * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
-        //象限4
-        circle_projectile[8] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[8].GetComponent<wolfattack>().direction = new Vector2(0 * res, -1 * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
 
-        circle_projectile[10] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[10].GetComponent<wolfattack>().direction = new Vector2(a * res, -b * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[7] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[7].GetComponent<wolfattack>().direction = new Vector2(-a * res, -b * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
-        circle_projectile[11] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[11].GetComponent<wolfattack>().direction = new Vector2(b * res, -a * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            //象限4
+            circle_projectile[8] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[8].GetComponent<wolfattack>().direction = new Vector2(0 * res, -1 * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
 
-        circle_projectile[12] = Instantiate(_projectile, transform.position, Quaternion.identity);
-        circle_projectile[12].GetComponent<wolfattack>().direction = new Vector2(1 * res, 0 * res);
-        _audiosource.PlayOneShot(_circleshoot);
-        yield return new WaitForSeconds(second);
+            circle_projectile[10] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[10].GetComponent<wolfattack>().direction = new Vector2(a * res, -b * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+            circle_projectile[11] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[11].GetComponent<wolfattack>().direction = new Vector2(b * res, -a * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+            circle_projectile[12] = Instantiate(_projectile, transform.position, Quaternion.identity);
+            circle_projectile[12].GetComponent<wolfattack>().direction = new Vector2(1 * res, 0 * res);
+            _audiosource.PlayOneShot(_circleshoot);
+            yield return new WaitForSeconds(second);
+
+        }
 
 
 
@@ -334,7 +348,8 @@ public class WolfController : MonoBehaviour
 
         }
 
-       StartCoroutine(hurt_recover());
+
+        StartCoroutine(hurt_recover());
 
 
 
@@ -343,6 +358,7 @@ public class WolfController : MonoBehaviour
 
     private IEnumerator die()
     {
+
         Vector3 position = new Vector3(-1.5f * _playerTransform.localScale.x, 1, 0);
         position += _playerTransform.position;
         _hurteffect = Instantiate(hurteffect, position, Quaternion.identity);
@@ -357,12 +373,15 @@ public class WolfController : MonoBehaviour
         _audiosource.PlayOneShot(_wolfdie);
         _camera.GetComponent<ShakeCamera>().isshakeCamera = true;
         yield return new WaitForSeconds(1.0f);
+        _audiosource.PlayOneShot(_diebefore);
         _dieeffect.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(1.0f);
         _camera.GetComponent<ShakeCamera>().isshakeCamera = false;
+        _audiosource.PlayOneShot(_dieafter);
         StartCoroutine(fadeCoroutine());
-        yield return new WaitForSeconds(5.0f);
-        Destroy(gameObject);
+        // yield return new WaitForSeconds(5.0f);
+        // Destroy(gameObject);
+        Alivewolf.SetActive(true);
     }
 
     private IEnumerator fadeCoroutine()
@@ -380,9 +399,5 @@ public class WolfController : MonoBehaviour
             }
         }
     }
-
-
-
-
 
 }
