@@ -51,7 +51,8 @@ namespace DialogueEditor
         private void Update()
         {
             if (Hovering)
-            {
+            {   
+                
                 m_hoverT += Time.deltaTime;
                 float normalised = m_hoverT / 0.2f;
                 bool done = false;
@@ -80,7 +81,14 @@ namespace DialogueEditor
                 {
                     m_hoverState = (m_hoverState == eHoverState.animatingOn) ? eHoverState.idleOn : eHoverState.idleOff;
                 }
+
+                
             }
+            if (Input.GetKey(KeyCode.Alpha5))
+                {
+                    DoClickBehaviour();
+                    Debug.Log("press 5");
+                }
         }
 
 

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public ParticleSystem dust;
-
+    public static bool get = false;
     public int health;
     public float moveSpeed;
     public float jumpSpeed;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private float _climbJumpDelay = 0.2f;
     private float _attackEffectLifeTime = 0.05f;
 
-    private Animator _animator;
+    public Animator _animator;
     private Rigidbody2D _rigidbody;
     private Transform _transform;
     private SpriteRenderer _spriteRenderer;
@@ -94,6 +94,16 @@ public class PlayerController : MonoBehaviour
             fallControl();
             sprintControl();
             attackControl();
+        }
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            Debug.Log("press up arrow");
+            Vector2 newVelocity;
+            newVelocity.x = _rigidbody.velocity.x;
+            newVelocity.y = jumpSpeed;
+
+            _rigidbody.velocity = newVelocity;
+
         }
     }
 
