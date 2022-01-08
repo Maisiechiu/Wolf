@@ -334,11 +334,7 @@ public class WolfController : MonoBehaviour
 
         }
 
-        else
-        {
-            StartCoroutine(hurt_recover());
-
-        }
+       StartCoroutine(hurt_recover());
 
 
 
