@@ -45,6 +45,11 @@ public class loadscene : MonoBehaviour
         {
             SceneManager.LoadScene("elevenScene");
         }
+        if(PlayEnding.finish_ending)
+        {
+            PlayEnding.finish_ending = false;
+            SceneManager.LoadScene("Menu");
+        }
 
 
     }

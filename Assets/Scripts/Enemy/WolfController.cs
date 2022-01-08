@@ -401,6 +401,7 @@ public class WolfController : MonoBehaviour
                 yield return null;
             }
         }
+        PlayEnding.play_ending = true;
     }
 
 }
