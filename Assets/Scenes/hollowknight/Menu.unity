@@ -1808,6 +1808,7 @@ GameObject:
   - component: {fileID: 2002141597}
   - component: {fileID: 2002141600}
   - component: {fileID: 2002141599}
+  - component: {fileID: 2002141601}
   m_Layer: 18
   m_Name: Background
   m_TagString: HUD
@@ -1854,7 +1855,7 @@ SpriteRenderer:
   m_SortingLayerID: -1710231053
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ae98a7d99e84b14bac0c5161b4cf4d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b372c65a7a151014c9e3cee03cd9ed9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1903,7 +1904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8ae98a7d99e84b14bac0c5161b4cf4d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b372c65a7a151014c9e3cee03cd9ed9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1921,6 +1922,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002141596}
   m_CullTransparentMesh: 0
+--- !u!95 &2002141601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002141596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1b0391b8b6c340438c08c4b0a921d3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2088930205
 GameObject:
   m_ObjectHideFlags: 0
