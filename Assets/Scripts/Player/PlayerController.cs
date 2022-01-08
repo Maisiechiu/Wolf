@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private float _climbJumpDelay = 0.2f;
     private float _attackEffectLifeTime = 0.05f;
 
-    public Animator _animator;
+    private Animator _animator;
     private Rigidbody2D _rigidbody;
     private Transform _transform;
     private SpriteRenderer _spriteRenderer;
