@@ -6,6 +6,9 @@ using DialogueEditor;
 public class oldman : MonoBehaviour
 {
     public NPCConversation myConversation;
+    public Sprite RedhatFlower;
+    private SpriteRenderer _spriteRendererR;
+    public GameObject redhat;
 
     /*void OnMouseDown()
     {
@@ -17,7 +20,7 @@ public class oldman : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

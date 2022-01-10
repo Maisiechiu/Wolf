@@ -23,6 +23,9 @@ public class CryRedhat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PlayerController.get)
+        {
+            ConversationManager.Instance.SetBool("getRedhat", true);
+        }
     }
 }

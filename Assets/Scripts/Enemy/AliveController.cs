@@ -5,6 +5,7 @@ using UnityEngine;
 public class AliveController : MonoBehaviour
 {
     public GameObject _aliveeffect;
+    public GameObject _light;
 
     public ParticleSystem _alivepartical;
     public float destroyDelay;
@@ -28,12 +29,16 @@ public class AliveController : MonoBehaviour
 
     private float x_dec;
     private float y_dec;
+    private Rigidbody2D _rigidbody;
+
 
     public AudioSource _audiosource;
 
     public AudioClip _alivebefore;
 
     public AudioClip _aliveafter;
+    public float jumpSpeed;
+
 
 
 
@@ -46,6 +51,7 @@ public class AliveController : MonoBehaviour
         _animator = gameObject.GetComponent<Animator>();
         _audiosource.PlayOneShot(_alivebefore);
         _aliveeffect.SetActive(true);
+        _rigidbody = gameObject.GetComponent<Rigidbody2D>();
 
         _alivepartical = _aliveeffect.GetComponent<ParticleSystem>();
         StartCoroutine(fadeCoroutine());
@@ -68,7 +74,17 @@ public class AliveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            Debug.Log("press up arrow");
+            Vector2 newVelocity;
+            newVelocity.x = _rigidbody.velocity.x;
+            newVelocity.y = jumpSpeed;
 
+            _rigidbody.velocity = newVelocity;
+            _light.SetActive(true);
+
+        }
 
     }
 

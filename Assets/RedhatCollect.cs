@@ -19,6 +19,7 @@ public class RedhatCollect : MonoBehaviour
     {
         Debug.Log("Red Hat Mouse Down");
         gameObject.SetActive(false);
+        PlayerController.get = true;
 
     }
 }

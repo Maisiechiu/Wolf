@@ -397,6 +397,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 54f3a78e15cc3174ab48ac8e7b65a180, type: 3}
     - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
         type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 4901346560737042078}
+    - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
+        type: 3}
       propertyPath: jumpSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -462,6 +467,12 @@ GameObject:
 --- !u!4 &4997294978432110192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4195380477820900, guid: 3f189b4e844dd4c15bacde99d721494d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4996483079776891284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4901346560737042078 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95145525636607754, guid: 3f189b4e844dd4c15bacde99d721494d,
     type: 3}
   m_PrefabInstance: {fileID: 4996483079776891284}
   m_PrefabAsset: {fileID: 0}

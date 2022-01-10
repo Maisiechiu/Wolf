@@ -72,7 +72,10 @@ public class WolfController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.Alpha6))
+        {
+            Alivewolf.SetActive(true);
+        }
     }
 
     void update_position()
@@ -381,7 +384,7 @@ public class WolfController : MonoBehaviour
         StartCoroutine(fadeCoroutine());
         // yield return new WaitForSeconds(5.0f);
         // Destroy(gameObject);
-        Alivewolf.SetActive(true);
+        //Alivewolf.SetActive(true);
     }
 
     private IEnumerator fadeCoroutine()
@@ -398,6 +401,7 @@ public class WolfController : MonoBehaviour
                 yield return null;
             }
         }
+        PlayEnding.play_ending = true;
     }
 
 }
