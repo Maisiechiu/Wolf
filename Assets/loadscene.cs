@@ -11,6 +11,16 @@ public class loadscene : MonoBehaviour
     //Scene completed:1 4 35 7 8 11
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            Debug.Log("MENU");
+            PlayerController.get = false;
+            PlayerController.redhatdoor = false;
+            PlayerController.door35hasopen = false;
+            PlayerController.wolfdoor = false;
+            PlayerController.dooronehasopen = false;
+            PlayerController.health = 5;
+        }
 
     }
 
@@ -45,7 +55,7 @@ public class loadscene : MonoBehaviour
         {
             SceneManager.LoadScene("elevenScene");
         }
-        if(PlayEnding.finish_ending)
+        if (PlayEnding.finish_ending)
         {
             PlayEnding.finish_ending = false;
             SceneManager.LoadScene("Menu");
