@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public static bool wolfdoor = false;
     public static bool dooronehasopen = false;
     public static int health = 5;
+
+    public static bool Timeout = false;
     public float moveSpeed;
     public float jumpSpeed;
     public int jumpLeft;
@@ -85,13 +87,30 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _boxCollider = gameObject.GetComponent<PolygonCollider2D>();
         hurteffect.GetComponent<ParticleSystem>().Pause();
- 
+        if (Timeout)
+        {
+            get = false;
+            redhatdoor = false;
+            door35hasopen = false;
+            wolfdoor = false;
+            dooronehasopen = false;
+            health = 5;
+
+            Timeout = false;
+            Timer.timeRemaining = 120;
+
+        }
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (Timeout)
+        {
+            SceneManager.LoadScene("oneScene");
+        }
         updatePlayerState();
         if (_isInputEnabled)
         {
