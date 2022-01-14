@@ -6,6 +6,8 @@ public class AliveController : MonoBehaviour
 {
     public GameObject _aliveeffect;
     public GameObject _light;
+    public GameObject _player;
+    public GameObject _audio;
 
     public ParticleSystem _alivepartical;
     public float destroyDelay;
@@ -74,7 +76,7 @@ public class AliveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Debug.Log("press up arrow");
             Vector2 newVelocity;
@@ -117,7 +119,11 @@ public class AliveController : MonoBehaviour
     }
     private IEnumerator fadeCoroutine()
     {
+        _audio.SetActive(false);
+        _player.SetActive(false);
         yield return new WaitForSeconds(8f);
+
+
         _audiosource.PlayOneShot(_aliveafter);
 
         _animator.SetTrigger("alive");
