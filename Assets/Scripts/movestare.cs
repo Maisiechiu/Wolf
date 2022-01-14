@@ -9,11 +9,14 @@ public class movestare : MonoBehaviour
     private Rigidbody2D _rb;
     public AudioSource _audiosource;
     public AudioClip _movestaresound;
+
+    private bool _move;
     // Start is called before the first frame update
     void Start()
     {
         _transform = gameObject.GetComponent<Transform>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _move = false;
 
 
     }
@@ -25,19 +28,27 @@ public class movestare : MonoBehaviour
 
         if (layerName == "Player")
         {
-            Debug.Log("player");
-            _audiosource.PlayOneShot(_movestaresound);
-            _rb.velocity = new Vector2(0.0f, 3.0f);
+            _move = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_transform.position.y > 15.0f)
+        if (_move)
         {
-            _audiosource.Stop();
-            _rb.velocity = new Vector2(0.0f, 0.0f);
+            if (_transform.position.y > 15.0f)
+            {
+                _audiosource.Stop();
+                _rb.velocity = new Vector2(0.0f, -3.0f);
+            }
+            if (_transform.position.y < -5.1f)
+            {
+                _rb.velocity = new Vector2(0.0f, 3.0f);
+
+            }
+
+
         }
 
     }
