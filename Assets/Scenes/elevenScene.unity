@@ -3587,12 +3587,12 @@ GameObject:
   - component: {fileID: 1935820126}
   - component: {fileID: 1935820125}
   m_Layer: 0
-  m_Name: MusiscSource
+  m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1935820125
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3607,7 +3607,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.32
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

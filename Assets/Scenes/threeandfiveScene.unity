@@ -3852,7 +3852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491347209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.358, y: 26.112, z: -16.400457}
+  m_LocalPosition: {x: -1.358, y: 26.112, z: -0.6}
   m_LocalScale: {x: 1.0133879, y: 1.0643835, z: 1.0133879}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4527,7 +4527,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5074,12 +5074,12 @@ PrefabInstance:
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.394897
+      value: -15.947006
       objectReference: {fileID: 0}
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.035760403
+      value: -0.031001568
       objectReference: {fileID: 0}
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
