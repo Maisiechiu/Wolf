@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem dust;
     public static bool get = false;
-    public int health;
+    public static bool redhatdoor = false;
+    public static bool wolfdoor = false;
+    public static int health = 5;
     public float moveSpeed;
     public float jumpSpeed;
     public int jumpLeft;
@@ -381,6 +383,7 @@ public class PlayerController : MonoBehaviour
         material.bounciness = 0;
         material.friction = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        health = 5;
     }
 
     /* ######################################################### */

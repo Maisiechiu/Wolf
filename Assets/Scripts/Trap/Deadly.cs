@@ -11,7 +11,9 @@ public class Deadly : MonoBehaviour
         if (layerName == "Player")
         {
             PlayerController playerController = collision.collider.GetComponent<PlayerController>();
-            playerController.hurt(playerController.health);
+            //playerController.hurt(playerController.health);
+            playerController.hurt(PlayerController.health);
+           
         }
         else if (layerName == "Enemy")
         {

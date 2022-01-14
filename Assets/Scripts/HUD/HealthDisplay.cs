@@ -32,7 +32,8 @@ public class HealthDisplay : MonoBehaviour
 
     void Update()
     {
-        int healthRemain = playerController.health;
+        int healthRemain = PlayerController.health;
+       
         for (int i = 0; i < healthRemain; ++i)
         {
             _hearts[i].sprite = healthFull;
