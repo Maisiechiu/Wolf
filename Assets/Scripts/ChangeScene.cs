@@ -37,21 +37,25 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.gameObject.tag == "threescene" && m_scene.name == "oneScene"){
             SceneManager.LoadScene("threeandfiveScene");
+            PlayerPrefs.SetString("Milestone", "threeandfiveScene");
             oneToThree = true;
             threeToOne = false;
         }
         if (other.gameObject.tag == "threescene" && m_scene.name == "fourScene"){
             SceneManager.LoadScene("threeandfiveScene");
+            PlayerPrefs.SetString("Milestone", "threeandfiveScene");
             fourToThree = true;
             threeToFour = false;
         }
         if (other.gameObject.tag == "threescene" && m_scene.name == "eightScene"){
             SceneManager.LoadScene("threeandfiveScene");
+            PlayerPrefs.SetString("Milestone", "threeandfiveScene");
             eightToThree = true;
             threeToEight = false;
         }
         if (other.gameObject.tag == "onescene"){
             SceneManager.LoadScene("oneScene");
+            PlayerPrefs.SetString("Milestone", "oneScene");
             threeToOne = true;
             oneToThree = false;
             fourToThree = false;
@@ -59,6 +63,7 @@ public class ChangeScene : MonoBehaviour
         }
         if (other.gameObject.tag == "fourscene"){
             SceneManager.LoadScene("fourScene");
+            PlayerPrefs.SetString("Milestone", "fourScene");
             threeToFour = true;
             oneToThree = false;
             fourToThree = false;
@@ -66,6 +71,7 @@ public class ChangeScene : MonoBehaviour
         }
         if (other.gameObject.tag == "eightscene"){
             SceneManager.LoadScene("eightScene");
+            PlayerPrefs.SetString("Milestone", "eightScene");
             threeToEight = true;
             oneToThree = false;
             fourToThree = false;
