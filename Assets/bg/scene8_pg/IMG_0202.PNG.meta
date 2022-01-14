@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 6da627283386648cb8abd844c09564d3
+guid: 8af136ca32a4b4b32a2a107b2fa4ecbb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4525694923973674695
-    second: IMG_0243_0
-  - first:
-      213: 3311480365368385951
-    second: IMG_0243_1
-  - first:
-      213: 4421579635409457244
-    second: IMG_0243_2
+      213: -9153388549133856882
+    second: IMG_0202_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -55,11 +49,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 1609, z: 0, w: 1666}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -96,55 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0243_0
+      name: IMG_0202_0
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 2116
-        width: 1396
-        height: 215
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 939b2ced1708131c0800000000000000
-      internalID: -4525694923973674695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0243_1
-      rect:
-        serializedVersion: 2
-        x: 1790
-        y: 1596
-        width: 1920
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f91a67ae8ddb4fd20800000000000000
-      internalID: 3311480365368385951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0243_2
-      rect:
-        serializedVersion: 2
-        x: 1809
-        y: 1620
-        width: 1877
-        height: 9
+        x: 2347
+        y: 1
+        width: 41
+        height: 982
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,17 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c509eaa704b9c5d30800000000000000
-      internalID: 4421579635409457244
+      spriteID: e8f8fbd7c91a8f080800000000000000
+      internalID: -9153388549133856882
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -969, y: -406}
-      - {x: -969, y: 346}
-      - {x: 1019, y: 326}
-      - {x: 1019, y: -406}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
