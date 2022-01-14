@@ -138,7 +138,8 @@ public class GunnerController : EnemyController
     protected override void die()
     {
         _animator.SetTrigger("isDead");
-
+        Timer.dead = true;
+        
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
 
         // stop movement

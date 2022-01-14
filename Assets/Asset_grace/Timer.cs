@@ -6,8 +6,9 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 90;
-    public bool timerIsRunning = false;
+    public static float timeRemaining = 90;
+    public static bool timerIsRunning = false;
+    public static bool dead = false;
 
     //TextMeshPro timeText;
     public Text timeText;
@@ -26,6 +27,11 @@ public class Timer : MonoBehaviour
             if(timeRemaining>0)
             {
                 timeRemaining -= Time.deltaTime;
+                if (dead)
+                {
+                    timeRemaining += Time.deltaTime *2000;
+                    dead = false;
+                }
                 DisplayTime(timeRemaining);
             }
 

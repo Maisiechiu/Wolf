@@ -189,7 +189,8 @@ public class PatrolController : EnemyController
     protected override void die()
     {
         _animator.SetTrigger("isDead");
-
+        Timer.dead = true;
+        
         Vector2 newVelocity;
         newVelocity.x = 0;
         newVelocity.y = 0;

@@ -219,7 +219,6 @@ public class PatrolController1 : EnemyController
     {
         _animator.SetTrigger("isDead");
 
-
         _isChasing = false;
         _isMovable = false;
 
