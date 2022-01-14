@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dust;
     public static bool get = false;
     public static bool redhatdoor = false;
+    public static bool door35hasopen = false;
     public static bool wolfdoor = false;
+    public static bool dooronehasopen = false;
     public static int health = 5;
     public float moveSpeed;
     public float jumpSpeed;
@@ -70,8 +72,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip _hurtosund;
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         _isInputEnabled = true;
         _isSprintReset = true;
         _isAttackable = true;
@@ -83,10 +86,13 @@ public class PlayerController : MonoBehaviour
         _boxCollider = gameObject.GetComponent<PolygonCollider2D>();
         hurteffect.GetComponent<ParticleSystem>().Pause();
 
+
+
     }
 
+
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
         updatePlayerState();
         if (_isInputEnabled)
@@ -97,7 +103,7 @@ public class PlayerController : MonoBehaviour
             sprintControl();
             attackControl();
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Debug.Log("press up arrow");
             Vector2 newVelocity;
@@ -141,6 +147,16 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.tag == "Platform")
         {
             _audiosource.PlayOneShot(_downsound);
+        }
+        if (collision.collider.name == "doorstare_35" && !door35hasopen && redhatdoor)
+        {
+            GameObject.Find("door").GetComponent<Threeandfivedoor>().opendoor();
+            door35hasopen = true;
+        }
+        if (collision.collider.name == "Doorone" && !dooronehasopen && redhatdoor)
+        {
+            GameObject.Find("Doorone").GetComponent<Onedoor>().opendoor();
+            dooronehasopen = true;
         }
     }
 
