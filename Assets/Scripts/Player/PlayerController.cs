@@ -85,9 +85,7 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _boxCollider = gameObject.GetComponent<PolygonCollider2D>();
         hurteffect.GetComponent<ParticleSystem>().Pause();
-
-
-
+ 
     }
 
 

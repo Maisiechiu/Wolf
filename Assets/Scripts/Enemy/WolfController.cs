@@ -42,6 +42,10 @@ public class WolfController : MonoBehaviour
     public float destroyDelay;
 
     public GameObject Alivewolf;
+    public GameObject _audio;
+    public GameObject _player;
+    public GameObject _back;
+    public GameObject _env;
 
 
 
@@ -63,7 +67,7 @@ public class WolfController : MonoBehaviour
         _transform = gameObject.GetComponent<Transform>();
         StartCoroutine(change_postition(UnityEngine.Random.Range(1.0f, 3.0f)));
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _dieeffect.GetComponent<ParticleSystem>().Pause();
+        _dieeffect.SetActive(false);
         isdie = false;
 
 
@@ -377,7 +381,7 @@ public class WolfController : MonoBehaviour
         _camera.GetComponent<ShakeCamera>().isshakeCamera = true;
         yield return new WaitForSeconds(1.0f);
         _audiosource.PlayOneShot(_diebefore);
-        _dieeffect.GetComponent<ParticleSystem>().Play();
+        _dieeffect.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         _camera.GetComponent<ShakeCamera>().isshakeCamera = false;
         _audiosource.PlayOneShot(_dieafter);
@@ -402,6 +406,13 @@ public class WolfController : MonoBehaviour
             }
         }
         PlayEnding.play_ending = true;
+
+
+        _audio.SetActive(false);
+        _player.SetActive(false);
+        GameObject.Find("HUD").SetActive(false);
+        _back.SetActive(false);
+        _env.SetActive(false);
     }
 
 }
