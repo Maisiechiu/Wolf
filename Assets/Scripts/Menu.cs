@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
-{   
+{
     Canvas ManualCanvas;
     Canvas MenuCanvas;
     bool finish;
+    public GameObject _audio;
     private void Start()
     {
         ManualCanvas = GameObject.Find("ManualCanvas").GetComponent<Canvas>();
@@ -29,7 +30,8 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetString("Milestone", "oneScene");
         MenuCanvas.enabled = false;
         MyVideo.play = true;
-    
+        _audio.SetActive(false);
+
     }
 
     public void clickLoadButton()
