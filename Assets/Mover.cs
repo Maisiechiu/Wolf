@@ -39,7 +39,9 @@ public class Mover : MonoBehaviour
                 _animator.SetBool("IsRun", true);
             }*/
             //_animator.SetBool("IsRun", true);
-            transform.position = Vector3.MoveTowards(gameObject.transform.position, _targetPosition, speed * Time.deltaTime);
+        //     transform.position = Vector3.MoveTowards(gameObject.transform.position, _targetPosition, speed * Time.deltaTime);
+                transform.position = _targetPosition;
+                transform.localScale = new Vector3 (1,1,1);
         }
         if(alive_redhat.start && gameObject.transform.position.x == _targetPosition.x)
         {

@@ -59,6 +59,7 @@ public class loadscene : MonoBehaviour
         {
             PlayEnding.finish_ending = false;
             SceneManager.LoadScene("Menu");
+            PlayerPrefs.SetString("Milestone", "oneScene");
         }
 
 

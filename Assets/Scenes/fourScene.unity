@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3207974}
   m_Layer: 12
   m_Name: Wall
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1511,7 +1511,7 @@ GameObject:
   - component: {fileID: 259414978}
   m_Layer: 12
   m_Name: New Sprite (6)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 383934411}
   m_Layer: 12
   m_Name: New Sprite (4)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3018,7 +3018,7 @@ PrefabInstance:
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.731598
+      value: 15.873512
       objectReference: {fileID: 0}
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
@@ -3135,7 +3135,7 @@ GameObject:
   - component: {fileID: 506795818}
   m_Layer: 12
   m_Name: New Sprite (2)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4407,7 +4407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720755636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.956924, y: -0.67433625, z: -10}
+  m_LocalPosition: {x: 51.96501, y: -0.67433625, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 40971520}
@@ -5334,12 +5334,12 @@ PrefabInstance:
     - target: {fileID: 3300419883422892897, guid: 7785e96e5cf5f4d06b7ee6b8cefb9158,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.42226
+      value: 20.8
       objectReference: {fileID: 0}
     - target: {fileID: 3300419883422892897, guid: 7785e96e5cf5f4d06b7ee6b8cefb9158,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.26938
+      value: 19.8
       objectReference: {fileID: 0}
     - target: {fileID: 3300419883422892897, guid: 7785e96e5cf5f4d06b7ee6b8cefb9158,
         type: 3}
@@ -6182,7 +6182,7 @@ GameObject:
   - component: {fileID: 1062829933}
   m_Layer: 12
   m_Name: New Sprite (5)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8429,7 +8429,7 @@ GameObject:
   - component: {fileID: 1663046712}
   m_Layer: 12
   m_Name: New Sprite (3)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

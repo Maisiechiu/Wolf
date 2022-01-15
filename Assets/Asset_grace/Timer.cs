@@ -6,7 +6,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public static float timeRemaining = 120;
+    public static float timeRemaining = 180;
     public static bool timerIsRunning = false;
     public static bool dead = false;
 

@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13930775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7399998, y: 1.8000002, z: -10}
+  m_LocalPosition: {x: -0.61, y: 14.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2009261779}
@@ -538,12 +538,12 @@ PrefabInstance:
     - target: {fileID: 4997294978432110192, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7399998
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 4997294978432110192, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8000002
+      value: 14.47
       objectReference: {fileID: 0}
     - target: {fileID: 4997294978432110192, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 5965455833937903330, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: jumpSpeed
-      value: 4.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5965455833937903330, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
@@ -2908,7 +2908,7 @@ MonoBehaviour:
   invulnerableColor:
   - {r: 0.9607843, g: 0.050980393, b: 0.050980393, a: 0.85490197}
   - {r: 1, g: 1, b: 1, a: 0.69803923}
-  health: 1
+  health: 10
   _audiosource: {fileID: 679417132}
   _attacksound: {fileID: 8300000, guid: e0f13065a47d2e945bd34a536a4dd2f9, type: 3}
   _circleshoot: {fileID: 8300000, guid: 75bd8d0828b5b504399059920cb75d63, type: 3}
@@ -3067,7 +3067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644760377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07999992, y: 7.99, z: -10}
+  m_LocalPosition: {x: 0.08000052, y: 7.9899993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

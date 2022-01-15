@@ -10,12 +10,14 @@ public class PatrolController1 : EnemyController
     public float behaveIntervalLeast;
     public float behaveIntervalMost;
 
+    
+
 
 
     private int _reachEdge;
     private bool _isChasing;
     private bool _isMovable;
-    private bool _isdie;
+    public static bool _isdie = false;  
 
 
     public Color[] invulnerableColor;
@@ -46,6 +48,9 @@ public class PatrolController1 : EnemyController
     // Start is called before the first frame update
     void Start()
     {
+        if(_isdie){
+            gameObject.SetActive(false) ; 
+        }
         ShockEffect.GetComponent<ParticleSystem>().Pause();
         _playerTransform = GlobalController.Instance.player.GetComponent<Transform>();
         _transform = gameObject.GetComponent<Transform>();
@@ -57,7 +62,7 @@ public class PatrolController1 : EnemyController
 
         _isChasing = false;
         _isMovable = true;
-        _isdie = false;
+        
     }
 
     // Update is called once per frame
