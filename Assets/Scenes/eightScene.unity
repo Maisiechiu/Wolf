@@ -987,7 +987,7 @@ PrefabInstance:
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.0522823
+      value: 5.7164116
       objectReference: {fileID: 0}
     - target: {fileID: 4996483079146249384, guid: 0a097f2906967e2458cec31104f9600c,
         type: 3}
@@ -1314,7 +1314,7 @@ GameObject:
   - component: {fileID: 1008682312}
   - component: {fileID: 1008682311}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BackGroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

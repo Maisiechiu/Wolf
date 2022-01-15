@@ -16,8 +16,6 @@ public class Menu : MonoBehaviour
         ManualCanvas.enabled = false;
         MenuCanvas.enabled = true;
 
-
-
     }
     private void Update()
     {
@@ -34,9 +32,7 @@ public class Menu : MonoBehaviour
 
     public void clickLoadButton()
     {
-        //SceneManager.LoadScene(PlayerPrefs.GetString("Milestone"));
-        SceneManager.LoadScene("oneScene");
-
+        SceneManager.LoadScene(PlayerPrefs.GetString("Milestone"));
     }
 
     public void clickQuitButton()

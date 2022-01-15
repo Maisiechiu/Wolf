@@ -19,8 +19,6 @@ TagManager:
   - threescene
   - fourscene
   - eightscene
-  - sevenscene
-  - elevenscene
   layers:
   - Default
   - TransparentFX

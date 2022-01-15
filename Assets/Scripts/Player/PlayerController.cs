@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem dust;
     public static bool get = false;
-    public static bool redhatdoor = false; 
+    public static bool redhatdoor = false;
     public static bool door35hasopen = false;
     public static bool wolfdoor = false;
     public static bool dooronehasopen = false;
@@ -95,7 +95,6 @@ public class PlayerController : MonoBehaviour
             wolfdoor = false;
             dooronehasopen = false;
             health = 5;
-            PatrolController1._isdie = false; 
 
             Timeout = false;
             Timer.timeRemaining = 180;
@@ -121,16 +120,16 @@ public class PlayerController : MonoBehaviour
             sprintControl();
             attackControl();
         }
-        // if (Input.GetKey(KeyCode.UpArrow))
-        // {
-        //     Debug.Log("press up arrow");
-        //     Vector2 newVelocity;
-        //     newVelocity.x = _rigidbody.velocity.x;
-        //     newVelocity.y = jumpSpeed;
+        /*if (Input.GetKey(KeyCode.UpArrow))
+        {
+            Debug.Log("press up arrow");
+            Vector2 newVelocity;
+            newVelocity.x = _rigidbody.velocity.x;
+            newVelocity.y = jumpSpeed;
 
-        //     _rigidbody.velocity = newVelocity;
+            _rigidbody.velocity = newVelocity;
 
-        // }
+        }*/
     }
 
 
