@@ -21,5 +21,4 @@ public class HUD : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
-
 }

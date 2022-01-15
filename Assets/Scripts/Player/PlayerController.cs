@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +10,10 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem dust;
     public static bool get = false;
-    public static bool redhatdoor = false; 
-    public static bool door35hasopen = false;
+    public static bool redhatdoor = false;
     public static bool wolfdoor = false;
-    public static bool dooronehasopen = false;
     public static int health = 5;
-
-    public static bool Timeout = false;
+    public static bool Timeout = false; 
     public float moveSpeed;
     public float jumpSpeed;
     public int jumpLeft;
@@ -74,9 +71,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip _hurtosund;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         _isInputEnabled = true;
         _isSprintReset = true;
         _isAttackable = true;
@@ -87,30 +83,24 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _boxCollider = gameObject.GetComponent<PolygonCollider2D>();
         hurteffect.GetComponent<ParticleSystem>().Pause();
-        if (Timeout)
-        {
+        
+        if(Timeout){
+            
             get = false;
             redhatdoor = false;
-            door35hasopen = false;
             wolfdoor = false;
-            dooronehasopen = false;
             health = 5;
-            PatrolController1._isdie = false; 
-
-            Timeout = false;
-            Timer.timeRemaining = 180;
-
+            Timeout = false; 
+            Timer.timeRemaining = 10 ; 
         }
 
     }
 
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Timeout)
-        {
-            SceneManager.LoadScene("oneScene");
+        if(Timeout){
+             SceneManager.LoadScene("oneScene") ; 
         }
         updatePlayerState();
         if (_isInputEnabled)
@@ -121,16 +111,16 @@ public class PlayerController : MonoBehaviour
             sprintControl();
             attackControl();
         }
-        // if (Input.GetKey(KeyCode.UpArrow))
-        // {
-        //     Debug.Log("press up arrow");
-        //     Vector2 newVelocity;
-        //     newVelocity.x = _rigidbody.velocity.x;
-        //     newVelocity.y = jumpSpeed;
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            Debug.Log("press up arrow");
+            Vector2 newVelocity;
+            newVelocity.x = _rigidbody.velocity.x;
+            newVelocity.y = jumpSpeed;
 
-        //     _rigidbody.velocity = newVelocity;
+            _rigidbody.velocity = newVelocity;
 
-        // }
+        }
     }
 
 
@@ -165,16 +155,6 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.tag == "Platform")
         {
             _audiosource.PlayOneShot(_downsound);
-        }
-        if (collision.collider.name == "doorstare_35" && !door35hasopen && redhatdoor)
-        {
-            GameObject.Find("door").GetComponent<Threeandfivedoor>().opendoor();
-            door35hasopen = true;
-        }
-        if (collision.collider.name == "Doorone" && !dooronehasopen && redhatdoor)
-        {
-            GameObject.Find("Doorone").GetComponent<Onedoor>().opendoor();
-            dooronehasopen = true;
         }
     }
 

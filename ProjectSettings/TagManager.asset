@@ -19,8 +19,7 @@ TagManager:
   - threescene
   - fourscene
   - eightscene
-  - sevenscene
-  - elevenscene
+  - Sound
   layers:
   - Default
   - TransparentFX

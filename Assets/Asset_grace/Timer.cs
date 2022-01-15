@@ -6,14 +6,15 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public static float timeRemaining = 180;
+    public static float timeRemaining = 10;
     public static bool timerIsRunning = false;
     public static bool dead = false;
 
     //TextMeshPro timeText;
     public Text timeText;
 
-
+    
+    
     // Update is called once per frame
     void Start()
     {
@@ -22,30 +23,45 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
-        if (timerIsRunning)
+        if(timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if(timeRemaining>0)
             {
                 timeRemaining -= Time.deltaTime;
                 if (dead)
                 {
-                    timeRemaining += Time.deltaTime * 2000;
+                    timeRemaining += Time.deltaTime *2000;
                     dead = false;
                 }
                 DisplayTime(timeRemaining);
             }
 
             else
-            {
+            {   
+                InvokeRepeating("showHide", 0.5f, 0.5f); 
+                //yield return new WaitForSeconds(3.0f);
                 Debug.Log("Time's up");
-                PlayerController.Timeout = true;
+                PlayerController.Timeout = true;  
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
+        }   
+    }
+    void showHide()
+    {
+        if(timeText.text == "")
+        {
+            timeText.text = "0:00";
+            timeText.color = Color.red;
+
+        }
+        else
+        {
+            timeText.text = "";
         }
     }
 
-    void DisplayTime(float timeToDisplay)
+    void  DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
 
